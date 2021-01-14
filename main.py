@@ -49,8 +49,9 @@ while True:
     pygame.draw.circle(DISPLAYSURFACE, (218,165,32), (205, 10), 10)
     pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (230, 10), 10)
 
-    # this is his cape, he protecc, he attacc
-    pygame.draw.rect(DISPLAYSURFACE, (255, 0, 0), (275, 225, 400, 20), 0)
+    # this is hair, we don't want a bald Jeff
+    for x in range(100, 299, 2):
+        pygame.draw.rect(DISPLAYSURFACE, (139, 69, 19), (275, x, 15, 1), 0)
 
     # these are his spots, because his ambition is to become a ladybird
     pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (245, 300), 15)
@@ -58,6 +59,29 @@ while True:
     pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (245, 200), 15)
     pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (250, 150), 15)
     pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (300, 400), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (240, 380), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (280, 340), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (250, 300), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (335, 325), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (350, 375), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (400, 400), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (387, 340), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (440, 325), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (445, 375), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (290, 500), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (290, 450), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (340, 430), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (340, 480), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (390, 445), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (390, 495), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (440, 440), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (440, 480), 15)
+
+    # this is his tail
+    pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (490, 300, 10, 100), 0)
+    pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (475, 300, 20, 10), 0)
+    for x in range (490, 501, 2):
+        pygame.draw.rect(DISPLAYSURFACE, (139,69,19), (x, 400, 1, 15), 0)
 
     pygame.display.update()
 
