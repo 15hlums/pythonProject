@@ -42,7 +42,8 @@ while True:
     # this is his mouth, nom nom
     pygame.draw.arc(DISPLAYSURFACE, (0, 0, 0), (150, 100, 20, 20), 3, 6, 50)
 
-
+    # these are his horns, he protecc and he snacc
+    pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (200, 100, 100, 200), 0)
 
     pygame.display.update()
 
