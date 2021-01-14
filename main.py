@@ -28,6 +28,7 @@ while True:
 
     # this is his body, hes doesnt like body shaming
     pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (255, 300, 225, 125), 0)
+    pygame.draw.circle(DISPLAYSURFACE, (255, 215, 0),(265, 375),50)
 
     # this is his neck, with only 7 bones in it
     pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (225, 100, 50, 250), 0)
@@ -42,8 +43,21 @@ while True:
     # this is his mouth, nom nom
     pygame.draw.arc(DISPLAYSURFACE, (0, 0, 0), (150, 100, 20, 20), 3, 6, 50)
 
-    # these are his horns, he protecc and he snacc
-    pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (200, 100, 100, 200), 0)
+    # these are his horns, or whatever you call them
+    pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (200, 10, 10, 40), 0)
+    pygame.draw.rect(DISPLAYSURFACE, (255, 215, 0), (225, 10, 10, 50), 0)
+    pygame.draw.circle(DISPLAYSURFACE, (218,165,32), (205, 10), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (230, 10), 10)
+
+    # this is his cape, he protecc, he attacc
+    pygame.draw.rect(DISPLAYSURFACE, (255, 0, 0), (275, 225, 400, 20), 0)
+
+    # these are his spots, because his ambition is to become a ladybird
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (245, 300), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (250, 250), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (245, 200), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (250, 150), 15)
+    pygame.draw.circle(DISPLAYSURFACE, (218, 165, 32), (300, 400), 15)
 
     pygame.display.update()
 
