@@ -83,6 +83,29 @@ while True:
     for x in range (490, 501, 2):
         pygame.draw.rect(DISPLAYSURFACE, (139,69,19), (x, 400, 1, 15), 0)
 
+    # this is a tree as Jeff eats leaves
+    pygame.draw.rect(DISPLAYSURFACE, (139,69,19), (600, 250, 50, 300), 0)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (600, 225), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (650, 200), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (550, 250), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (575, 190), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (600, 170), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (620, 150), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (650, 155), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (540, 230), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (620, 225), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (650, 240), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (700, 225), 50)
+    pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (695, 200), 50)
+
+    # these are clouds
+    pygame.draw.ellipse(DISPLAYSURFACE, (128, 128, 128), (370, 10, 100, 80), 0)
+    pygame.draw.ellipse(DISPLAYSURFACE, (105, 105, 105), (370, 10, 100, 80), 1)
+    pygame.draw.ellipse(DISPLAYSURFACE, (128,128,128), (350, 5, 100, 80), 0)
+    pygame.draw.ellipse(DISPLAYSURFACE, (105,105,105), (350, 5, 100, 80), 1)
+    pygame.draw.ellipse(DISPLAYSURFACE, (128, 128, 128), (330, 15, 100, 80), 0)
+    pygame.draw.ellipse(DISPLAYSURFACE, (105, 105, 105), (330, 15, 100, 80), 1)
+
     pygame.display.update()
 
     FPSCLOCK.tick(30)

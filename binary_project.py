@@ -72,9 +72,14 @@ def binary_converter_v2(num, comp):
                 binary.append(1)
         if comp >= 0000000000000000:
             binary_list = ([int(d) for d in str(bin)])
+            for x in range(0, 16):
+                if binary_list[x] == 0:
+                   binary_list[x] = 1
+                elif binary_list[x] == 1:
+                    binary_list[x] = 0
     while len(binary) != 16:
         binary.append(0)
     binary.reverse()
     print(binary)
 
-print(binary_converter_v2(12,))
+print(binary_converter_v2(12,1000000000000001))
