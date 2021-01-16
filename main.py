@@ -98,13 +98,34 @@ while True:
     pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (700, 225), 50)
     pygame.draw.circle(DISPLAYSURFACE, (85,107,47), (695, 200), 50)
 
-    # these are clouds
-    pygame.draw.ellipse(DISPLAYSURFACE, (128, 128, 128), (370, 10, 100, 80), 0)
-    pygame.draw.ellipse(DISPLAYSURFACE, (105, 105, 105), (370, 10, 100, 80), 1)
-    pygame.draw.ellipse(DISPLAYSURFACE, (128,128,128), (350, 5, 100, 80), 0)
-    pygame.draw.ellipse(DISPLAYSURFACE, (105,105,105), (350, 5, 100, 80), 1)
-    pygame.draw.ellipse(DISPLAYSURFACE, (128, 128, 128), (330, 15, 100, 80), 0)
-    pygame.draw.ellipse(DISPLAYSURFACE, (105, 105, 105), (330, 15, 100, 80), 1)
+    # this is a flower, Jeff likes flowers
+    pygame.draw.rect(DISPLAYSURFACE, (0,100,0), (100, 500, 10, 50), 0)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (100, 499), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (110, 490), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (101, 488), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (108, 500), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (255,69,0), (105, 495), 2)
+
+    pygame.draw.rect(DISPLAYSURFACE, (0,100,0), (150, 500, 10, 50), 0)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (150, 499), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (160, 490), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (151, 488), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (158, 500), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (255,69,0), (155, 495), 2)
+
+    pygame.draw.rect(DISPLAYSURFACE, (0,100,0), (50, 500, 10, 50), 0)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (50, 499), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (60, 490), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (51, 488), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (58, 500), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (255,69,0), (55, 495), 2)
+
+    pygame.draw.rect(DISPLAYSURFACE, (0,100,0), (200, 500, 10, 50), 0)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (200, 499), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (210, 490), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (201, 488), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (139,0,139), (208, 500), 10)
+    pygame.draw.circle(DISPLAYSURFACE, (255,69,0), (205, 495), 2)
 
     pygame.display.update()
 
