@@ -71,15 +71,194 @@ def binary_converter_v2(num, comp):
             elif remainder > 0:
                 binary.append(1)
         if comp >= 0000000000000000:
-            binary_list = ([int(d) for d in str(bin)])
+            binary_list = ([int(d) for d in str(comp)])
             for x in range(0, 16):
                 if binary_list[x] == 0:
                    binary_list[x] = 1
                 elif binary_list[x] == 1:
                     binary_list[x] = 0
+            if binary_list[15] == 0:
+                binary_list[15] = 1
+            elif binary_list[15] == 1:
+                binary_list[15] = 0
+                if binary_list[14] == 0:
+                    binary_list[14] = 1
+                elif binary_list[14] == 1:
+                    binary_list[14] = 0
+                    if binary_list[13] == 0:
+                        binary_list[13] = 1
+                    elif binary_list[13] == 1:
+                        binary_list[13] = 0
+                        if binary_list[12] == 0:
+                            binary_list[12] = 1
+                        elif binary_list[12] == 1:
+                            binary_list[12] = 0
+                            if binary_list[11] == 0:
+                                binary_list[11] = 1
+                            elif binary_list[11] == 1:
+                                binary_list[11] = 0
+                                if binary_list[10] == 0:
+                                    binary_list[10] = 1
+                                elif binary_list[10] == 1:
+                                    binary_list[10] = 0
+                                    if binary_list[9] == 0:
+                                        binary_list[9] = 1
+                                    elif binary_list[9] == 1:
+                                        binary_list[9] = 0
+                                        if binary_list[8] == 0:
+                                            binary_list[8] = 1
+                                        elif binary_list[8] == 1:
+                                            binary_list[8] = 0
+                                            if binary_list[7] == 0:
+                                                binary_list[7] = 1
+                                            elif binary_list[7] == 1:
+                                                binary_list[7] = 0
+                                                if binary_list[6] == 0:
+                                                    binary_list[6] = 1
+                                                elif binary_list[6] == 1:
+                                                    binary_list[6] = 0
+                                                    if binary_list[5] == 0:
+                                                        binary_list[5] = 1
+                                                    elif binary_list[5] == 1:
+                                                        binary_list[5] = 0
+                                                        if binary_list[4] == 0:
+                                                            binary_list[4] = 1
+                                                        elif binary_list[4] == 1:
+                                                            binary_list[4] = 0
+                                                            if binary_list[3] == 0:
+                                                                binary_list[3] = 1
+                                                            elif binary_list[3] == 1:
+                                                                binary_list[3] = 0
+                                                                if binary_list[2] == 0:
+                                                                    binary_list[2] = 1
+                                                                elif binary_list[2] == 1:
+                                                                    binary_list[2] = 0
+                                                                    if binary_list[1] == 0:
+                                                                        binary_list[1] = 1
+                                                                    elif binary_list[1] == 1:
+                                                                        binary_list[1] = 0
+                                                                        if binary_list[0] == 0:
+                                                                            binary_list[0] = 1
+                                                                        elif binary_list[0] == 1:
+                                                                            binary_list[0] = 0
     while len(binary) != 16:
         binary.append(0)
     binary.reverse()
     print(binary)
+    print(binary_list)
 
-print(binary_converter_v2(12,1000000000000001))
+def binary_converter_v3(num, comp):
+    '''
+    This function has two different modes.
+    If you input a decimal, it returns a string of 1’s and 0’s that encode it in 16-bit binary.
+    If you input a 16-bit string of 1’s and 0’s,
+    it will return the two’s complement number that the string represents.
+    If you input a value outside the accepted range, it will return None.
+    If you put a value that will not perfectly fit into a binary decimal,
+    it will round the value down as little as possible.
+    It also takes a second input that tells it where the fixed decimal point is located.
+    :param: input_value: a positive integer, or a string of 1’s and 0’s
+    :param: fixed_position: a positive integer from 0 to 15,
+            this indicates which bit the fixed point is found in front of.
+            So position 0 would have all bits behind the fixed point
+    :return: a number
+    '''
+    binary = []
+    x = divmod(num, 1)
+    integer = int(x[0])
+    decimal = (x[1])
+    if num > 65535 or num < 1:
+        print('None')
+    else:
+        while integer >= 1:
+            remainder = integer % 2
+            integer /= 2
+            if remainder == 0:
+                binary.append(0)
+            elif remainder > 0:
+                binary.append(1)
+        binary.reverse()
+        binary.append('.')
+        while decimal > 0:
+            decimal *= 2
+            if int(decimal) == 1:
+                binary.append(1)
+                decimal -= 1
+            elif int(decimal) == 0:
+                binary.append(0)
+        if comp >= 0000000000000000:
+            binary_list = ([int(d) for d in str(comp)])
+            for x in range(0, 16):
+                if binary_list[x] == 0:
+                   binary_list[x] = 1
+                elif binary_list[x] == 1:
+                    binary_list[x] = 0
+            if binary_list[15] == 0:
+                binary_list[15] = 1
+            elif binary_list[15] == 1:
+                binary_list[15] = 0
+                if binary_list[14] == 0:
+                    binary_list[14] = 1
+                elif binary_list[14] == 1:
+                    binary_list[14] = 0
+                    if binary_list[13] == 0:
+                        binary_list[13] = 1
+                    elif binary_list[13] == 1:
+                        binary_list[13] = 0
+                        if binary_list[12] == 0:
+                            binary_list[12] = 1
+                        elif binary_list[12] == 1:
+                            binary_list[12] = 0
+                            if binary_list[11] == 0:
+                                binary_list[11] = 1
+                            elif binary_list[11] == 1:
+                                binary_list[11] = 0
+                                if binary_list[10] == 0:
+                                    binary_list[10] = 1
+                                elif binary_list[10] == 1:
+                                    binary_list[10] = 0
+                                    if binary_list[9] == 0:
+                                        binary_list[9] = 1
+                                    elif binary_list[9] == 1:
+                                        binary_list[9] = 0
+                                        if binary_list[8] == 0:
+                                            binary_list[8] = 1
+                                        elif binary_list[8] == 1:
+                                            binary_list[8] = 0
+                                            if binary_list[7] == 0:
+                                                binary_list[7] = 1
+                                            elif binary_list[7] == 1:
+                                                binary_list[7] = 0
+                                                if binary_list[6] == 0:
+                                                    binary_list[6] = 1
+                                                elif binary_list[6] == 1:
+                                                    binary_list[6] = 0
+                                                    if binary_list[5] == 0:
+                                                        binary_list[5] = 1
+                                                    elif binary_list[5] == 1:
+                                                        binary_list[5] = 0
+                                                        if binary_list[4] == 0:
+                                                            binary_list[4] = 1
+                                                        elif binary_list[4] == 1:
+                                                            binary_list[4] = 0
+                                                            if binary_list[3] == 0:
+                                                                binary_list[3] = 1
+                                                            elif binary_list[3] == 1:
+                                                                binary_list[3] = 0
+                                                                if binary_list[2] == 0:
+                                                                    binary_list[2] = 1
+                                                                elif binary_list[2] == 1:
+                                                                    binary_list[2] = 0
+                                                                    if binary_list[1] == 0:
+                                                                        binary_list[1] = 1
+                                                                    elif binary_list[1] == 1:
+                                                                        binary_list[1] = 0
+                                                                        if binary_list[0] == 0:
+                                                                            binary_list[0] = 1
+                                                                        elif binary_list[0] == 1:
+                                                                            binary_list[0] = 0
+    add = [0]
+    while len(binary) != 17:
+        binary = add + binary
+    print(binary)
+    print(binary_list)
