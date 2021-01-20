@@ -393,7 +393,7 @@ def binary_converter_v4(num, exponent):
         res = int_res + dec_res
         print(res)
 
-def binary_normalisation():
+def binary_normalisation(num, exponent):
     '''
     This function takes a given 16-bit binary string and normalised it.
     It also takes a second input that tells it how many bits are used in the exponent.
@@ -403,3 +403,53 @@ def binary_normalisation():
             These are always found at the end of the string
     :return: a normalized string of 1’s and 0’s
     '''
+    if num > 1111111111111111:
+        print('None')
+    else:
+        binary_list = ([int(d) for d in str(num)])
+
+        exponant_binary = []
+
+        for x in range(len(binary_list) - 1, len(binary_list) - exponent - 1, -1):
+            exponant_binary.append(binary_list[x])
+            binary_list.pop(x)
+        exponant_binary.reverse()
+
+        exponant_shift = 0
+
+        for x in range(1, 16, 1):
+            if binary_list[1] == 0:
+                binary_list.pop(1)
+                exponant_shift += 1
+            elif binary_list[1] == 1:
+                 break
+
+        for x in range(0, exponant_shift, 1):
+            binary_list.append(0)
+
+        power = 0
+        exponent_res = 0
+
+        for x in range(len(exponant_binary) - 1, 0, -1):
+                bit = ((exponant_binary[x]) * 2 ** power)
+                exponent_res += bit
+                power += 1
+
+        exponent_res -= exponant_shift
+
+        exp_bin_final = []
+
+        while exponent_res >= 1:
+            remainder = exponent_res % 2
+            exponent_res /= 2
+            if remainder == 0:
+                exp_bin_final.append(0)
+            elif remainder > 0:
+                exp_bin_final.append(1)
+
+        while len(exp_bin_final) != len(exponant_binary):
+            exp_bin_final.append(0)
+        exp_bin_final.reverse()
+
+        res = binary_list + exp_bin_final
+        print(res)
