@@ -351,7 +351,6 @@ def binary_converter_v4(num, exponent):
                                                                     elif binary_list[0] == 1:
                                                                         binary_list[0] = 0
 
-
         exponant_list = []
         for x in range(15, 15 - exponent, -1):
             exponant_list.append(binary_list[x])
@@ -370,15 +369,15 @@ def binary_converter_v4(num, exponent):
 
         decimal_place = []
 
-        for x in range(15 - exponent, 15 - exponent - shift, -1):
+        for x in range(15 - exponent, shift, -1):
             decimal_place.append(binary_list[x])
             binary_list.pop(x)
-            decimal_place.reverse()
+        decimal_place.reverse()
 
         dec_power = -1
         dec_res = 0
 
-        for x in range(0, shift, 1):
+        for x in range(0, len(decimal_place), 1):
             dec = ((decimal_place[x]) * 2 ** dec_power)
             dec_res += dec
             dec_power -= 1
@@ -393,3 +392,14 @@ def binary_converter_v4(num, exponent):
 
         res = int_res + dec_res
         print(res)
+
+def binary_normalisation():
+    '''
+    This function takes a given 16-bit binary string and normalised it.
+    It also takes a second input that tells it how many bits are used in the exponent.
+    It is assumed 1 for the sign bit and the rest for the mantissa.
+    :param: input_value a string of 1’s and 0’s
+    :param: exponent_bits: a positive integer from 1 to 13, this how many bits are used in the exponent.
+            These are always found at the end of the string
+    :return: a normalized string of 1’s and 0’s
+    '''
